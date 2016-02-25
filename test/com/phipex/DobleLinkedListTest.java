@@ -26,17 +26,46 @@ public class DobleLinkedListTest {
 
         Assert.assertNotNull("La lista no debe ser null",nueva);
 
+
+    }
+
+    @Test
+    public void testNuevaListaConCabeza() throws Exception {
+        DobleLinkedList nueva = new DobleLinkedList();
+
+        Nodo cabeza = nueva.getCabeza();
+
+        Assert.assertNotNull(cabeza);
+
     }
 
     @Test
     public void testSiguenteListaVacia() throws Exception {
         DobleLinkedList nueva = new DobleLinkedList();
 
-        Nodo experado = null;
+        Nodo cabeza = nueva.getCabeza();
 
-        Nodo retornado = nueva.siguiente();
+        Nodo experado = cabeza;
 
-        Assert.assertEquals("Al ser vacia siguiente debe ser nullo",experado,retornado);
+        Nodo retornado = cabeza.siguiente();
+
+        Assert.assertEquals("Al ser vacia siguiente debe se la cabeza",experado,retornado);
 
     }
+
+    @Test
+    public void testAnteriorListaVacia() throws Exception {
+        DobleLinkedList nueva = new DobleLinkedList();
+
+        Nodo cabeza = nueva.getCabeza();
+
+        Nodo experado = cabeza;
+
+        Nodo retornado = cabeza.anterior();
+
+        Assert.assertEquals("Al ser vacia anterior debe ser la cabeza",experado,retornado);
+
+    }
+
+
 }
