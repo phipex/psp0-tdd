@@ -1,5 +1,8 @@
 package com.phipex;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -17,6 +20,23 @@ public class DobleLinkedListTest {
 
     }
 
+    @Test
+    public void testNuevaListaVacia() throws Exception {
+        DobleLinkedList nueva = new DobleLinkedList();
 
+        Assert.assertNotNull("La lista no debe ser null",nueva);
 
+    }
+
+    @Test
+    public void testSiguenteListaVacia() throws Exception {
+        DobleLinkedList nueva = new DobleLinkedList();
+
+        Nodo experado = null;
+
+        Nodo retornado = nueva.siguiente();
+
+        Assert.assertEquals("Al ser vacia siguiente debe ser nullo",experado,retornado);
+
+    }
 }
